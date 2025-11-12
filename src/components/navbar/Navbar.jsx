@@ -11,7 +11,6 @@
 // export default Navbar
 
 
-
 import React from 'react';
 import {
   Navbar as MTNavbar,
@@ -20,6 +19,7 @@ import {
   Button,
   IconButton,
 } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -34,17 +34,23 @@ const Navbar = () => {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {['Pages', 'Account', 'Blocks', 'Docs'].map((item, index) => (
-        <Typography
-          key={index}
-          as="li"
-          variant="small"
-          color="blue-gray"
-          className="p-1 font-medium hover:text-blue-500 cursor-pointer"
-        >
-          {item}
-        </Typography>
-      ))}
+      {['Pages', 'Account', 'Blocks', 'Docs', 'Admin Profile'].map(
+        (item, index) => (
+          <Typography
+            key={index}
+            as="li"
+            variant="small"
+            color="blue-gray"
+            className="p-1 font-medium hover:text-blue-500 cursor-pointer"
+          >
+            {item === 'Admin Profile' ? (
+              <Link to="/dashboard">{item}</Link>
+            ) : (
+              item
+            )}
+          </Typography>
+        )
+      )}
     </ul>
   );
 
@@ -58,7 +64,9 @@ const Navbar = () => {
         >
           My Blog
         </Typography>
+
         <div className="hidden lg:block">{navList}</div>
+
         <div className="flex items-center gap-x-1">
           <Button variant="text" size="sm" className="hidden lg:inline-block">
             Log In
@@ -71,6 +79,7 @@ const Navbar = () => {
             Sign In
           </Button>
         </div>
+
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent lg:hidden"
@@ -128,4 +137,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
