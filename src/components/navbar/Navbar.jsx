@@ -1,17 +1,3 @@
-// import React from 'react'
-
-// function Navbar() {
-//   return (
-//     <div>
-//       <h1>navbar</h1>
-//     </div>
-//   )
-// }
-
-// export default Navbar
-
-
-
 import React from 'react';
 import {
   Navbar as MTNavbar,
@@ -19,6 +5,7 @@ import {
   Typography,
   IconButton,
 } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -34,36 +21,39 @@ function Navbar() {
   const navList = (
     <ul className="flex flex-col gap-4 lg:flex-row lg:items-center">
       <Typography as="li" variant="small" className="p-1 font-medium">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-white hover:text-gray-300 transition-colors"
         >
           Home
-        </a>
+        </Link>
       </Typography>
+
       <Typography as="li" variant="small" className="p-1 font-medium">
-        <a
-          href="#"
+        <Link
+          to="/allblogs"
           className="text-white hover:text-gray-300 transition-colors"
         >
           Blog
-        </a>
+        </Link>
       </Typography>
+
       <Typography as="li" variant="small" className="p-1 font-medium">
-        <a
-          href="#"
+        <Link
+          to="/about"
           className="text-white hover:text-gray-300 transition-colors"
         >
           About
-        </a>
+        </Link>
       </Typography>
+
       <Typography as="li" variant="small" className="p-1 font-medium">
-        <a
-          href="#"
+        <Link
+          to="/contact"
           className="text-white hover:text-gray-300 transition-colors"
         >
           Contact
-        </a>
+        </Link>
       </Typography>
     </ul>
   );
@@ -71,7 +61,7 @@ function Navbar() {
   return (
     <MTNavbar className="bg-gray-900 text-white px-6 py-3 rounded-none max-w-full border-none shadow-none">
       <div className="flex items-center justify-between">
-        <Typography as="a" href="#" className="text-2xl font-bold text-white">
+        <Typography as={Link} to="/" className="text-2xl font-bold text-white">
           Blogify
         </Typography>
 
