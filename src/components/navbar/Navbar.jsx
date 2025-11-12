@@ -11,79 +11,75 @@
 // export default Navbar
 
 
+
 import React from 'react';
 import {
   Navbar as MTNavbar,
-  MobileNav,
+  Collapse,
   Typography,
-  Button,
   IconButton,
 } from '@material-tailwind/react';
-import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
+  const handleWindowResize = () =>
+    window.innerWidth >= 960 && setOpenNav(false);
+
   React.useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 960) setOpenNav(false);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {['Pages', 'Account', 'Blocks', 'Docs', 'Admin Profile'].map(
-        (item, index) => (
-          <Typography
-            key={index}
-            as="li"
-            variant="small"
-            color="blue-gray"
-            className="p-1 font-medium hover:text-blue-500 cursor-pointer"
-          >
-            {item === 'Admin Profile' ? (
-              <Link to="/dashboard">{item}</Link>
-            ) : (
-              item
-            )}
-          </Typography>
-        )
-      )}
+    <ul className="flex flex-col gap-4 lg:flex-row lg:items-center">
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a
+          href="#"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          Home
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a
+          href="#"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          Blog
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a
+          href="#"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          About
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a
+          href="#"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          Contact
+        </a>
+      </Typography>
     </ul>
   );
 
   return (
-    <MTNavbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium text-xl"
-        >
-          My Blog
+    <MTNavbar className="bg-gray-900 text-white px-6 py-3 rounded-none max-w-full border-none shadow-none">
+      <div className="flex items-center justify-between">
+        <Typography as="a" href="#" className="text-2xl font-bold text-white">
+          Blogify
         </Typography>
 
         <div className="hidden lg:block">{navList}</div>
 
-        <div className="flex items-center gap-x-1">
-          <Button variant="text" size="sm" className="hidden lg:inline-block">
-            Log In
-          </Button>
-          <Button
-            variant="gradient"
-            size="sm"
-            className="hidden lg:inline-block"
-          >
-            Sign In
-          </Button>
-        </div>
-
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent lg:hidden"
-          ripple={false}
+          className="text-white lg:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -93,11 +89,11 @@ const Navbar = () => {
               className="h-6 w-6"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={2}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                strokeWidth={2}
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
@@ -106,12 +102,13 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={2}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                strokeWidth={2}
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
@@ -119,21 +116,11 @@ const Navbar = () => {
         </IconButton>
       </div>
 
-      <MobileNav open={openNav}>
-        <div className="container mx-auto">
-          {navList}
-          <div className="flex flex-col gap-2 mt-2">
-            <Button fullWidth variant="text" size="sm">
-              Log In
-            </Button>
-            <Button fullWidth variant="gradient" size="sm">
-              Sign In
-            </Button>
-          </div>
-        </div>
-      </MobileNav>
+      <Collapse open={openNav}>
+        <div className="mt-4">{navList}</div>
+      </Collapse>
     </MTNavbar>
   );
-};
+}
 
 export default Navbar;
