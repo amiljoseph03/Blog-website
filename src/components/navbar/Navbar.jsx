@@ -55,6 +55,14 @@ function Navbar() {
           Contact
         </Link>
       </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <Link
+          to="/contact"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+          Admin Login
+        </Link>
+      </Typography>
     </ul>
   );
 
