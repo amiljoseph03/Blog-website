@@ -10,6 +10,8 @@ import Nopage from "./pages/nopage/Nopage"
 // import Home from "./pages/home/Home"
 import Home from './pages/home/Home';
 
+import CreateBlog from './pages/admin/createBlog/CreateBlog';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // import { Toaster } from 'react-hot-toast';
@@ -28,6 +30,7 @@ function App() {
         <Route path='/bloginfo/:id' element={<BlogInfo/>} />
         <Route path='/adminlogin' element={<Adminlogin/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/createblog' element={<CreateBlog />} />
         <Route path='/*' element={<Nopage/>} />
       </Routes>
       {/* <Toaster/> */}

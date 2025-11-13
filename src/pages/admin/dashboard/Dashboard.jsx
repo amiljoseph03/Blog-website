@@ -56,7 +56,16 @@ const AdminDashboard = () => {
           </div>
           <div>
             <p className="font-semibold text-gray-700">Role:</p>
-            <p>{admin.role}</p>
+            <p>{admin.role}</p>  <br />
+
+            {/* ..........  */}
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+              Create Blog
+            </button>
+
+            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+              Logout
+            </button>
           </div>
         </div>
       </div>
