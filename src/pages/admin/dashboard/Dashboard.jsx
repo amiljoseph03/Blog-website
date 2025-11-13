@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-
+// import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const AdminDashboard = () => {
+    const navigate = useNavigate();
   const admin = {
-    name: 'Amil Joseph',
-    email: 'amiljoseph03@gmail.com',
+    name: 'Admin',
+    email: 'admin@gmail.com',
     role: 'Admin',
   };
 
@@ -40,6 +42,14 @@ const AdminDashboard = () => {
     setBlogs(updatedBlogs);
   };
 
+
+  // .... logout 
+  const logout = ()=>{
+    localStorage.clear('admin')
+    navigate('/')
+  }
+
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       {/* Admin Details */}
@@ -63,7 +73,9 @@ const AdminDashboard = () => {
               Create Blog
             </button>
 
-            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+            <button 
+            onClick={logout}
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
               Logout
             </button>
           </div>
