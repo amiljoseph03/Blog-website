@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -29,13 +30,13 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex justify-center gap-4">
-          <Button
+          {/* <Button
             variant="outlined"
             color="white"
             size="lg"
             className="px-6 py-3 text-white border-white"
           >
-            Explore Blogs
+            Login
           </Button>
 
           <Button
@@ -44,9 +45,42 @@ const HeroSection = () => {
             size="lg"
             className="px-6 py-3 text-white border-white"
           >
-            Start Writing
-          </Button>
+            Register
+          </Button> */}
+
+          <Link to="/adminlogin">
+            <Button
+              variant="outlined"
+              color="white"
+              size="lg"
+              className="px-6 py-3 text-white border-white"
+            >
+              Login
+            </Button>
+          </Link>
+
+          <Link to="/register">
+            <Button
+              variant="outlined"
+              color="white"
+              size="lg"
+              className="px-6 py-3 text-white border-white"
+            >
+              Register
+            </Button>
+          </Link>
         </div>
+        <br />
+        <Link to="/allblogs">
+          <Button
+            variant="outlined"
+            color="white"
+            size="lg"
+            className="px-6 py-3 text-white border-white"
+          >
+            Explore Blogs
+          </Button>
+        </Link>
       </div>
     </section>
   );
