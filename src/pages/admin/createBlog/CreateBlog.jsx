@@ -135,6 +135,7 @@
 import { Timestamp } from 'firebase/firestore';
 import React from 'react';
 import { useState } from 'react';
+// import { Timestamp } from 'firebase/firestore';
 
 
 const CreateBlogUI = () => {
@@ -158,6 +159,13 @@ const CreateBlogUI = () => {
     time : Timestamp.now(),
   })
 
+  const addPost = async()=>{
+    if(blogs.title === "" || blogs.category === "" ||
+      blogs.content === "" ){
+            return alert('all fields required');
+      }
+
+  }
 
 
 
