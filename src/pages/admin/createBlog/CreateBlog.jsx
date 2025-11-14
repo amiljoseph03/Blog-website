@@ -6,6 +6,8 @@ import { database } from '../../../firebase/FirebaseConfig';
 
 import { ref, push, serverTimestamp } from 'firebase/database';
 
+import { useNavigate } from 'react-router-dom';
+
 const CreateBlogUI = () => {
   const [blogs, setBlogs] = useState({
     title: '',
@@ -45,6 +47,9 @@ const CreateBlogUI = () => {
       alert('Failed to save blog');
     }
   };
+
+  const navigate = useNavigate();
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center py-10">
@@ -125,6 +130,13 @@ const CreateBlogUI = () => {
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300"
             >
               🚀 Publish Blog
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/dashboard')}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300"
+            >
+              Go to Dashboard
             </button>
           </div>
         </form>
