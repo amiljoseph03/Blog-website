@@ -56,7 +56,7 @@ const AdminRegister = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Admin Registration
+          Register 
         </h2>
 
         <form className="space-y-6" onSubmit={register}>
@@ -108,7 +108,7 @@ const AdminRegister = () => {
 
           <p
             className="text-center mt-4 text-blue-600 cursor-pointer"
-            onClick={() => navigate('/admin-login')}
+            onClick={() => navigate('/adminlogin')}
           >
             Already have an account? Login
           </p>

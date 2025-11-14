@@ -4,9 +4,10 @@ const BlogPostSection = () => {
   const posts = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
+      image:
+        'https://i.pinimg.com/1200x/68/7c/9a/687c9aa52e2df7650f2f041c4a2fd84d.jpg',
       date: 'November 12, 2025',
-      title: 'Exploring the Beauty of Nature',
+      title: 'Cooking brings creativity alive.',
       description:
         'Discover how spending time in nature can refresh your mind and inspire creativity. A journey into the heart of the wild.',
     },
@@ -15,7 +16,7 @@ const BlogPostSection = () => {
       image:
         'https://i.pinimg.com/1200x/c9/42/d7/c942d777898a7c6881c2a296a00ec3d0.jpg',
       date: 'November 10, 2025',
-      title: 'The Art of Minimal Living',
+      title: 'Travel opens your mind.',
       description:
         'Learn how simplifying your lifestyle helps you focus on what truly matters. Less clutter, more peace.',
     },
@@ -23,7 +24,7 @@ const BlogPostSection = () => {
       id: 3,
       image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
       date: 'November 8, 2025',
-      title: 'Mastering the Remote Work Lifestyle',
+      title: 'Learning grows you daily.',
       description:
         'Explore essential habits and productivity tips for thriving in a remote work environment. Balance work and life like a pro.',
     },

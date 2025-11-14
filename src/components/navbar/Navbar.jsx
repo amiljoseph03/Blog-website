@@ -34,33 +34,41 @@ function Navbar() {
           to="/allblogs"
           className="text-white hover:text-gray-300 transition-colors"
         >
-          Blog
+          Blogs
         </Link>
       </Typography>
 
-      <Typography as="li" variant="small" className="p-1 font-medium">
+      {/* <Typography as="li" variant="small" className="p-1 font-medium">
         <Link
           to="/about"
           className="text-white hover:text-gray-300 transition-colors"
         >
           About
         </Link>
-      </Typography>
+      </Typography> */}
 
-      <Typography as="li" variant="small" className="p-1 font-medium">
+      {/* <Typography as="li" variant="small" className="p-1 font-medium">
         <Link
           to="/contact"
           className="text-white hover:text-gray-300 transition-colors"
         >
           Contact
         </Link>
-      </Typography>
+      </Typography> */}
       <Typography as="li" variant="small" className="p-1 font-medium">
         <Link
           to="/adminlogin"
           className="text-white hover:text-gray-300 transition-colors"
         >
-          Admin Login
+           Login
+        </Link>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <Link
+          to="/register"
+          className="text-white hover:text-gray-300 transition-colors"
+        >
+         Register
         </Link>
       </Typography>
     </ul>
