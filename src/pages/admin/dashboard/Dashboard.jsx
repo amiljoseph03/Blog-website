@@ -8,11 +8,20 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const db = getDatabase();
 
+  // const admin = {
+  //   name: 'Admin',
+  //   email: 'admin@gmail.com',
+  //   role: 'Admin',
+  // };
+
+  const adminEmail = localStorage.getItem('adminEmail'); // get logged-in email
+const adminName = localStorage.getItem('adminName');
   const admin = {
-    name: 'Admin',
-    email: 'admin@gmail.com',
-    role: 'Admin',
+      name: adminName || 'Admin',
+    email: adminEmail || 'No email',
+    role: 'User',
   };
+
 
   const [blogs, setBlogs] = useState([]);
 

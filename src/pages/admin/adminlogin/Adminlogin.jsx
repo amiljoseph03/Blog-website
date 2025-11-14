@@ -113,15 +113,33 @@ const AdminLogin = () => {
       return;
     }
 
+    // try {
+    //   const result = await signInWithEmailAndPassword(auth, email, password);
+    //   alert('Login successful!');
+    //   // localStorage.setItem('admin', JSON.stringify(result));
+    //   localStorage.setItem('adminEmail', result.user.email);
+
+    //   navigate('/dashboard');
+    // } catch (error) {
+    //   console.error('Login Error:', error);
+    //   alert('Invalid email or password');
+    // }
+
+
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       alert('Login successful!');
-      localStorage.setItem('admin', JSON.stringify(result));
+      const userName = email.split('@')[0];
+      // Store only email
+      localStorage.setItem('adminEmail', result.user.email);
+      localStorage.setItem('adminName', userName);
+
       navigate('/dashboard');
     } catch (error) {
       console.error('Login Error:', error);
       alert('Invalid email or password');
     }
+
   };
 
   return (
