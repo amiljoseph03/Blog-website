@@ -12,7 +12,8 @@ const BlogPostSection = () => {
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1522202195461-5a813ed86b15',
+      image:
+        'https://i.pinimg.com/1200x/c9/42/d7/c942d777898a7c6881c2a296a00ec3d0.jpg',
       date: 'November 10, 2025',
       title: 'The Art of Minimal Living',
       description:
