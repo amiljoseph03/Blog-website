@@ -14,6 +14,13 @@ import CreateBlog from './pages/admin/createBlog/CreateBlog';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+// ....DB 
+import {getDatabase} from 'firebase/database'
+// import {app} from './firebase'
+// import { app } from './firebase/FirebaseConfig';
+
+// const db = getDatabase(app)
+
 // import { Toaster } from 'react-hot-toast';
 function App() {
   return (
