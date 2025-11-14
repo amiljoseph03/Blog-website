@@ -161,8 +161,11 @@
 import React, { useState } from 'react';
 import { database } from '../../../firebase/FirebaseConfig';
 import { ref, push, serverTimestamp } from 'firebase/database';
+import { useNavigate } from 'react-router-dom';
+
 
 const CreateBlog = () => {
+    const navigate = useNavigate();
   const [blogs, setBlogs] = useState({
     title: '',
     category: '',
