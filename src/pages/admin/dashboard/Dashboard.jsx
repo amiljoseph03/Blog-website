@@ -126,7 +126,7 @@ const AdminDashboard = () => {
                 {/* Thumbnail */}
                 <td className="py-3 px-4">
                   <img
-                    src={blog.thumbnail}
+                    src={blog.imageUrl}
                     alt={blog.title}
                     className="w-16 h-12 rounded-md object-cover"
                   />

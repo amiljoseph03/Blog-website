@@ -5,6 +5,7 @@ import Blog from "./pages/blog/Blog"
 import AllBlogs from "./pages/allblogs/AllBlogs"
 import BlogInfo from "./pages/bloginfo/BlogInfo"
 import Adminlogin from "./pages/admin/adminlogin/Adminlogin"
+import Registration from "./pages/admin/adminlogin/Registration"
 import Dashboard from "./pages/admin/dashboard/Dashboard"
 import Nopage from "./pages/nopage/Nopage"
 // import Home from "./pages/home/Home"
@@ -32,24 +33,24 @@ function App() {
     //   Blog Website
     // </div>
 
-  <div>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/blog' element={<Blog/>} />
-        <Route path='/allblogs' element={<AllBlogs/>} />
-        <Route path='/bloginfo/:id' element={<BlogInfo/>} />
-        <Route path='/adminlogin' element={<Adminlogin/>} />
-        <Route path='/dashboard' element={<Dashboard/>} />
-        <Route path='/createblog' element={<CreateBlog />} />
-        <Route path='/*' element={<Nopage/>} />
-      </Routes>
-      {/* <Toaster/> */}
-    </Router>
-  </div>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/allblogs" element={<AllBlogs />} />
+          <Route path="/bloginfo/:id" element={<BlogInfo />} />
+          <Route path="/adminlogin" element={<Adminlogin />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/createblog" element={<CreateBlog />} />
 
+          <Route path="/register" element={<Registration />} />
 
-    
+          <Route path="/*" element={<Nopage />} />
+        </Routes>
+        {/* <Toaster/> */}
+      </Router>
+    </div>
   );
 }
 

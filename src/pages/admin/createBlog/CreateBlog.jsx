@@ -245,7 +245,22 @@ const CreateBlog = () => {
       <h2 className="text-2xl font-bold mb-4">Create Blog</h2>
 
       {/* IMAGE INPUT */}
-      <input type="file" accept="image/*" onChange={handleImage} />
+      {/* <input type="file" accept="image/*" onChange={handleImage} /> */}
+
+      <label className="cursor-pointer bg-purple-600 text-white px-4 py-2 rounded inline-block mt-4">
+        Upload Image
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImage}
+          className="hidden"
+        />
+      </label>
+
+      {/* Show file name after selecting */}
+      {image && (
+        <p className="text-gray-600 mt-2 text-sm">Selected: {image.name}</p>
+      )}
 
       {preview && (
         <img
@@ -287,6 +302,14 @@ const CreateBlog = () => {
         className="bg-blue-600 text-white px-5 py-2 rounded mt-4"
       >
         Publish Blog
+      </button>
+
+      <button
+        type="button"
+        onClick={() => navigate('/dashboard')}
+        className="bg-green-600 text-white px-5 py-2 rounded mt-4 ml-2"
+      >
+        Go to Dashboard
       </button>
     </div>
   );
