@@ -22,6 +22,10 @@ import {getDatabase} from 'firebase/database'
 // const db = getDatabase(app)
 
 // import { Toaster } from 'react-hot-toast';
+
+
+
+
 function App() {
   return (
     // <div className="text-center text-2xl font-bold text-blue-600">
